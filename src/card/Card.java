@@ -1,10 +1,13 @@
 package card;
+
+import java.io.Serializable;
+
 /**
  * Represents a Magic the Gathering Card
  * Abstract class: to instantiate use a specific type ex Creature, instant,etc
  * Created by kalenpw on 4/13/17.
  */
-public abstract class Card {
+public abstract class Card implements Serializable{
 
     protected String _Name;
     protected ManaCost _ManaCost;
@@ -22,6 +25,10 @@ public abstract class Card {
 
     public String getDescription(){
         return _Description;
+    }
+
+    public Artwork getArtWork(){
+        return _ArtWork;
     }
 
 

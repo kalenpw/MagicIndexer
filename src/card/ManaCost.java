@@ -18,6 +18,11 @@ public class ManaCost {
         _TotalCost = totalCost;
     }
 
+    public ManaCost(String apiFormattedString){
+        //TODO get info from api format
+
+    }
+
     public ManaCost(ArrayList<ManaTypes> costs){
         int totalCost = 0;
         for(int i = 0; i < costs.size(); i++){
@@ -27,9 +32,6 @@ public class ManaCost {
         _TotalCost = totalCost;
     }
 
-    public ManaCost(String cardName){
-        //TODO get cost fom card
-    }
 
     //Accessors and mutators
 

@@ -1,12 +1,22 @@
 package card;
+/*
+name
+cost
+text
+power
+toughness
+image
+ */
+
+import java.io.Serializable;
 
 /**
  * Created by kalenpw on 4/13/17.
  */
-public class Creature extends  Card{
+public class Creature extends  Card implements Serializable {
     //Fields
-    int power;
-    int toughness;
+    private int _Power;
+    private int _Toughness;
 
     //Constructors
     public Creature(){
@@ -18,7 +28,17 @@ public class Creature extends  Card{
     //Methods
     public Creature(String name){
         super._Name = name;
-        //TODO get details from name
+
+    }
+
+    public Creature(String name, ManaCost manaCost, String text, int power, int toughness, Artwork artwork){
+        super._Name = name;
+        super._ManaCost = manaCost;
+        super._Description = text;
+        this._Power = power;
+        this._Toughness = toughness;
+        super._ArtWork = artwork;
+
     }
 
 }

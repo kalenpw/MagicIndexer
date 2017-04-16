@@ -6,10 +6,17 @@ package card;
 public class Artwork {
 
     //Fields
-    String cardImageDirectory;
+    private String _ImageLocation;
 
     public Artwork(String newCardImageDirectory){
-        cardImageDirectory = newCardImageDirectory;
+        _ImageLocation = newCardImageDirectory;
     }
+
+    public String getImageLocation(){
+        return _ImageLocation;
+    }
+
+
+
 }
 
