@@ -13,4 +13,13 @@ public class CardCollection implements Serializable{
     public CardCollection(ArrayList<Card> library){
         _CardLibrary = library;
     }
+
+    //Methods
+    public void addCard(Card newCard){
+        _CardLibrary.add(newCard);
+    }
+
+    public void removeCard(Card toRemove){
+        _CardLibrary.remove(toRemove);
+    }
 }

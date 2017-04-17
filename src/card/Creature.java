@@ -24,6 +24,9 @@ public class Creature extends  Card implements Serializable {
     }
 
     //Accessors and mutators
+    public int getPower(){
+        return _Power;
+    }
 
     //Methods
     public Creature(String name){
@@ -40,5 +43,6 @@ public class Creature extends  Card implements Serializable {
         super._ArtWork = artwork;
 
     }
+
 
 }

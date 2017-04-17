@@ -34,11 +34,12 @@ public class JsonManager {
      * @return String - the data matching key
      */
     public static String getValueOfKey(String key){
+        key = addQuotesToKey(key);
         //Account for trailing quotes because value is actually "yourValue
         int accountForTrailingQuote = 1;
         //findingValues are representative of how many quotation marks we have iterated over
-        int stillFindingValue = 2;
-        int doneFindingValue = 3;
+        int stillFindingValue = 3;
+        int doneFindingValue = 4;
         String value = "";
         int quoteCount = 0;
         getJson();
@@ -58,6 +59,10 @@ public class JsonManager {
         return "";
     }
 
+    private static String addQuotesToKey(String key){
+        return "\"" + key + "\"";
+    }
+
     /**
      * Cleaner version of getJsonImplemented that uses the _Url field and timeout value of 1000ms
      * @return String - complete Json from url
@@ -71,8 +76,6 @@ public class JsonManager {
             e.printStackTrace();
             return e.toString();
         }
-
-
     }
 
     /**

@@ -19,16 +19,20 @@ public class CardFactory {
         _CardName = removeSpacesFromString(cardName);
     }
 
+    /**
+     * Creates a Card from set name
+     * @return Card newly created card
+     */
     public Card createCard(){
         JsonManager.setUrl(getQueryUrl());
         String cardType = JsonManager.getValueOfKey("types");
 
         switch(cardType){
+            //TODO better handling of artifact creatures
+            case "artifact":
             case "creature":
                 return createCreature();
         }
-
-
 
         return null;
     }
@@ -64,7 +68,7 @@ public class CardFactory {
      * @param String str - string to replace spaces in
      * @return String with no spaces
      */
-    private String removeSpacesFromString(String str){
+    private String removeSpacesFromString(String str) {
         return str.replace(" ", "%20");
     }
 }
